@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 import './App.css'
 import OurAppTitle from './components/OurAppTitle';
@@ -9,12 +9,12 @@ function App() {
 
   const[counter1,setCounter1]=useState(0);
   const[counter2,setCounter2]=useState(0);
-  const handleCounter1=()=>{
-    setCounter1(counter1+1);
-  }
-  const handleCounter2=()=>{
-    setCounter2(counter2+2)
-  }
+  const handleCounter1=useCallback(()=>{
+    setCounter1((prev)=>prev+1);
+  },[]);
+  const handleCounter2=useCallback(()=>{
+    setCounter2((prev)=>prev+5)
+  },[])
   return (
     <>
       <OurAppTitle/>
