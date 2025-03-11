@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
 import './App.css'
 import OurAppTitle from './components/OurAppTitle';
@@ -15,6 +15,12 @@ function App() {
   const handleCounter2=useCallback(()=>{
     setCounter2((prev)=>prev+5)
   },[])
+
+  const isEven =useMemo(()=>{
+    let i=0;
+    while(i<1000000) i++;
+    return counter1 %2 ===0 ? 'Counter is Even' :'Counter is Odd'
+  })
   return (
     <>
       <OurAppTitle/>
@@ -23,6 +29,7 @@ function App() {
       <hr />
       <div className="counter-app-1">
         <Title counter={counter1}/>
+        <p>{isEven}</p>
         <Button clickHandler={handleCounter1}/>
       </div>
 
