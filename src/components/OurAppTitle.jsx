@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const OurAppTitle = () => {
   return (
@@ -8,4 +8,4 @@ const OurAppTitle = () => {
   )
 }
 
-export default OurAppTitle
+export default memo(OurAppTitle)

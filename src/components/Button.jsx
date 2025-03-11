@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const Button = ({clickHandler}) => {
   return (
@@ -8,4 +8,4 @@ const Button = ({clickHandler}) => {
   )
 }
 
-export default Button
+export default memo(Button)

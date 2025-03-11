@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import OurAppTitle from './components/OurAppTitle';
 import Button from './components/Button';
+import Title from './components/Title';
 
 function App() {
 
@@ -21,12 +22,12 @@ function App() {
       <h1>Our simple app</h1>
       <hr />
       <div className="counter-app-1">
-        <p>Value of the counter 1 is: {counter1}</p>
+        <Title counter={counter1}/>
         <Button clickHandler={handleCounter1}/>
       </div>
 
       <div className="counter-app-2">
-        <p>Value of the counter 2 is: {counter2}</p>
+      <Title counter={counter2}/>
         <Button clickHandler={handleCounter2}/>
       </div>
     </>
